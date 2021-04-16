@@ -3,7 +3,7 @@ An Exercise in Visualizing Human mtDNA Phylogenies
 
 A webpage exploring in the effectiveness of different data visualization methods for representing mitochondrial DNA phylogenies. This project is coded in css, javascript, and html. 
 
-# Usage
+## Usage
 
 To view the webpage, simply copy the following url into any browser:
 
