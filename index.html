@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Understanding Darwinism Final Project</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="parallax">
+		<div class="text-box">
+			<h1 align="center" style="color:white;">An Exercise in Visualizing Human mtDNA Phylogenies</h1>
+		</div>
+	</div>
+
+	<div class="text">
+		<p class="paragraphs">The following project is meant to explore the use of various data visualization methods for phylogenies, specifically human mitochondrial DNA in this case.</p>
+		<p class="paragraphs">At the core of mankind’s research into our own evolutionary path lies the study of mitochondrial DNA. Mitochondrial DNA—or mtDNA for short—is located in the mitochondria of the cell and is therefore not transmitted through nuclear DNA. As a result, mtDNA is inherited directly from the mother. The reason mtDNA is so important to understanding human evolution is that by measuring the accumulation of mutations, we can approximate the timeline of our species’ exodus from Africa as well as our migration throughout the rest of the world. </p>
+		<p class="paragraphs">The haploid nature of mtDNA means that it follows a clonal pattern when transmitting from one individual to another; over time, this transmission results in the accumulation of mutations at specific sites. These sites become mutational hotspots which are then used as markers for divergence in phylogenic reconstructions, whereas other sites remain largely unchanged over the course of our species’ history.  </p>
+		<p class="paragraphs">mtDNA mutations and the resulting diverging characteristic allows us to organize phylogenic trees by haplogroups. A haplogroup is a grouping of organisms who share a common ancestor and is defined by a set of genes inherited by a single parent.  Human mtDNA haplogroups are defined by differences in mtDNA. The current nomenclature for these haplogroups is as follows: as you move from the root to the tip of a phylogeny, groups gain extra identifiers. For examples, the evolution of haplogroup M results in the namings M > M7 > M7a > M7a1. Every branch of the phylogeny is defined by one or more mutations, which are usually variations from the Cambridge reference sequence, the first ever sequenced mtDNA in 1981.</p>
+	</div>
+
+	<div class="vis-title">
+		<h2 align="center">Below, I have created an interactive phylogeny based on the work of Mannis van Oven, representative of our current model for the evolution of human mtDNA.</h2>
+	</div>
+
+	<div class="vis">
+
+		<div class="container">
+			<div class="row">
+				<!-- left column -->
+				<div class="col-2">
+					<div align="center" style="margin-top: 40px">
+						<input type="checkbox" id="collapse">Collapse the visualization<br>
+						<input type="checkbox" id="comp">Increase Complexity
+					</div>
+				</div>
+
+				<!-- right column -->
+				<div class="col-10">
+					<div align="center">
+						<div id="tree"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="paragraphs">Please explore the visualization. You can zoom and pan around, as well as collapse the tree into its first 2 nodes. Try clicking on some of the nodes as well! Currently, the phylogeny is only displaying certain subtrees, which represent the broader human haplotypes. Note, when you increase the complexity of the tree, the system will take a moment.</p>
+	</div>
+
+	<div class="vis-title"></div>
+
+	<div class="text">
+		<p class="paragraphs">As you can see, when phylogenies get large, they can be intellectually taxing to parse. However, by focusing on a specific aspect of the phylogeny, we can gain useful data. </p>
+		<p class="paragraphs">As mentioned previously, human mtDNA phylogenies are useful when determining how our ancestors disseminated out into the world after our exodus from Africa. By comparing the mutations found between different people, we can then create our haplogroups and trace back our ancestry.  </p>
+		</p>
+	</div>
+
+	<div class="vis-title">
+		<h2 align="center">Below are several visualizations that are meant to convey where individual haplogroups (only to the point of broad groups such as L0 or R) are approximately located in the world. </h2>
+	</div>
+
+	<div class="vis">
+		<div class="container">
+			<div class="row">
+				<!-- left column -->
+				<div class="col-4">
+					<div align="center">
+					<p class="paragraphs" style="padding:90px 0px 0px 0px">This visualization uses a different method of displaying hierarchical data, called circle packing. Each circle represents a node and every node contained within another node represents some data that is the child of some other data. For example, if you click on Africa’s node, you can see all the haplogroups that are in Africa. Circle packing is a more intuitive form of representing hierarchical data compared to standard trees, as you can see what elements are contained within each “parent” set of data. </p>
+					</div>
+				</div>
+
+				<!-- right column -->
+				<div class="col-8">
+					<div align="center" style="margin: 40px">
+						<div id="circle"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="vis-title">
+		<h2 align="center">Next is a visualization that employs a similar format as the previous one, but in a more space efficient manner.</h2>
+	</div>
+
+	<div class="vis">
+		<div class="container">
+			<div align="center">
+				<input type="checkbox" id="comp2" style="margin-top: 40px">Increase Complexity
+				<div id="map" style="margin-top: 20px"></div>
+			</div>
+
+			<p class="paragraphs">The visualization method deployed here is called a treemap. It is similar to a regular tree, except it also displays quantity as well. In this case, we can see the number of mutations between the mtMRCA (mitochondrial most recent common ancestor) and whichever haplogroup we are searching for. Also, this visualization can show both the original full phylogeny and the previous geographic, condensed version; click on the checkbox above to explore! At first, you cannot see the diversification of the haplogroups due to the number of mutations aggregated within the rest. Click on the bar above to go back as well! </p>
+		</div>
+
+	</div>
+
+	<div class="vis-title">
+		<h2 align="center"> </h2>
+	</div>
+
+	<div class="text">
+		<p class="paragraphs">There exists other methods of visualization that could be useful when working with large phylogenies as well, such as the sunburst chart or the heat map. There actually already exist popular models that employ both those methods. As the world of phylogenic reconstruction continues to improve, these trees will inevitably grow larger and larger. Experimentation with differing methods of visualization will be important in the world of human mitochondrial genome sequencing because, as shown when viewing the full phylogeny, it can be incredibly difficult to parse through them. </p>
+		<h2>Citations</h2>
+		<cite>Bandelt, Hans-Jürgen., et al. Human Mitochondrial DNA and the Evolution of Homo Sapiens. Springer, 2006.</cite> <br> <br>
+		<cite>Arvelakis A., Reczko M., Stamatakis A., Symeonidis A., Tollis I.G. (2005) Using Treemaps to Visualize Phylogenetic Trees. In: Oliveira J.L., Maojo V., Martín-Sánchez F., Pereira A.S. (eds) Biological and Medical Data Analysis. ISBMDA 2005. Lecture Notes in Computer Science, vol 3745. Springer, Berlin, Heidelberg</cite> <br> <br>
+		<cite>van Oven M, Kayser M. 2009. Updated comprehensive phylogenetic tree of global human mitochondrial DNA variation. Hum Mutat 30(2):E386-E394. http://www.phylotree.org.</cite> <br> <br>
+		<cite>The Data Visualization Catalogue, www.datavizcatalogue.com </cite> <br><br>
+		<cite>Pereira, Luísa, et al. “Comparing Phylogeny and the Predicted Pathogenicity of Protein Variations Reveals Equal Purifying Selection across the Global Human MtDNA Diversity.” The American Journal of Human Genetics, vol. 88, no. 4, 2011, pp. 433–439.</cite>
+	</div>
+
+	<div class="vis-title">
+		<p class="paragraph" align="center">By Cole Bateman</p>
+	</div>
+
+	<!-- Load JS libraries -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/queue.min.js"></script>
+	<script src="js/topojson.min.js"></script>
+	<script src="js/d3.min.js"></script>
+	<script src="js/d3-tip.js"></script>
+
+	<!-- Choropleth and second visualization -->
+	<script src="js/vis-tree.js"></script>
+	<script src="js/vis-treeMap.js"></script>
+	<script src="js/vis-circlePacking.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
